@@ -6,10 +6,6 @@ gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3', '1.3.9'
 
-group :development, :test do
-  gem 'sqlite3', '1.3.9'
-end
-
 group :production do
   gem 'pg'
 end
@@ -51,5 +47,20 @@ gem 'spring',        group: :development
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'paperclip'
+
+group :development, :test do 
+  gem 'sqlite3', '1.3.9'
+  gem 'debugger'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'rspec-rails'
+  gem 'rspec'
+  gem 'webrat'
+  gem 'simplecov'
+end
+
 
 ruby '1.9.3'
