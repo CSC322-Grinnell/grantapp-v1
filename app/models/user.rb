@@ -5,6 +5,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :role
+  after_initialize :set_default_role
+
+
+
+
+  def set_default_role
+    self.role ||= "applicant"
+  end
+
 
 end
 
