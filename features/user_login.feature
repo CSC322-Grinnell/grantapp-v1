@@ -11,20 +11,20 @@ Background: user in database
     | Test0    | test0@test.com | 1234abcd |
 
 Scenario: see the log in form
-  When I go to the log in page
+  When I go to the user log in page
   Then I should see a form for "email"
   Then I should see a form for "password"
   Then I should see a button with "Login" 
 
 Scenario: log in with valid credentials
-  When I go to the log in page
+  When I go to the user log in page
   And I fill form for "email" with "test0@test.com"   
   And I fill form for "password" with "1234abcd"
   And I press "Login"
-  Then I should be directed to dashboard
+  Then I should be directed to admin dashboard
 
 Scenario: log in with invalid password
-  When I go to the log in page
+  When I go to the user log in page
   And I fill form for "email" with "test0@test.com"
   And I fill form for "password" with "abcdefgh"
   And I press "Login"

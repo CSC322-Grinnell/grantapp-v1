@@ -1,0 +1,8 @@
+Scenario: admin login
+
+Given /^the following admins exist$/ do |admins|
+  admins.hashes.each do |admin|
+    Admin.create1(admin)
+  end
+end
+
