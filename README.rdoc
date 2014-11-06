@@ -1,28 +1,17 @@
-== README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Admin:
+username:	admin@example.com
+password:	password
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+User:
+username:	user1@userspace.com
+password:	password1
+
+
+Admin user control ==> http://limitless-dusk-2646.herokuapp.com/admin/    ||   http://localhost:3000/admin
+
+User login page   ==>  http://limitless-dusk-2646.herokuapp.com/users/sign_in   ||   http://localhost:3000/users/sign_in
+
+
+NOTE: You must be signed out in the admin site in order to log into the user page as an admin!
+
