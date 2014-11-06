@@ -18,10 +18,10 @@ Scenario: see the log in form
 
 Scenario: log in with valid credentials
   When I go to the user log in page
-  And I fill form for "email" with "test0@test.com"   
-  And I fill form for "password" with "1234abcd"
-  And I press "Login"
-  Then I should be directed to user dashboard
+  And I fill form for "user_email" with "test0@test.com"   
+  And I fill form for "user_password" with "1234abcd"
+  And I press "Log in"
+  Then I should be on user dashboard
 
 Scenario: log in with invalid password
   When I go to the user log in page
