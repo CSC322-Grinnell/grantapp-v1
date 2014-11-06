@@ -21,7 +21,7 @@ Scenario: log in with valid credentials
   And I fill form for "user_email" with "test0@test.com"   
   And I fill form for "user_password" with "1234abcd"
   And I press "Log in"
-  Then I should be on user dashboard
+  Then I should be on dashboard
 
 Scenario: log in with invalid password
   When I go to the user log in page

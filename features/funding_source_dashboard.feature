@@ -16,6 +16,7 @@ Scenario: funding source dashboard
   And I fill form for "user_email" with "fs0@admim.com"
   And I fill form for "user_password" with "1234abcd"
   And I press "Log in"
+  Then I should be on dashboard
   Then I should see a button with "Review Applications"
   Then I should see a button with "Approve/Disapprove Applications"
   Then I should see a button with "Edit Programs"

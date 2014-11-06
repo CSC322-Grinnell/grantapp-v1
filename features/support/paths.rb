@@ -31,6 +31,9 @@ module NavigationHelpers
     when /^admin dashboard$/
       admin_root_path
 
+    when /^dashboard$/
+      dashboard_index_path
+
     else
       begin
         page_name =~ /^the (.*) page$/
