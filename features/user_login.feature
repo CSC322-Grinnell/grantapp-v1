@@ -12,28 +12,28 @@ Background: user in database
 
 Scenario: see the log in form
   When I go to the user log in page
-  Then I should see a form for "email"
-  Then I should see a form for "password"
-  Then I should see a button with "Login" 
+  Then I should see a form for "user_email"
+  Then I should see a form for "user_password"
+  Then I should see a button with "Log in" 
 
 Scenario: log in with valid credentials
   When I go to the user log in page
-  And I fill form for "email" with "test0@test.com"   
-  And I fill form for "password" with "1234abcd"
-  And I press "Login"
-  Then I should be directed to admin dashboard
+  And I fill form for "user_email" with "test0@test.com"   
+  And I fill form for "user_password" with "1234abcd"
+  And I press "Log in"
+  Then I should be directed to user dashboard
 
 Scenario: log in with invalid password
   When I go to the user log in page
-  And I fill form for "email" with "test0@test.com"
-  And I fill form for "password" with "abcdefgh"
-  And I press "Login"
-  Then I should see an error message
+  And I fill form for "user_email" with "test0@test.com"
+  And I fill form for "user_password" with "abcdefgh"
+  And I press "Log in"
+  Then I should see "Invalid email or password."
 
 Scenario: log in with invalid email
-  When I go to the log in page
-  And I fill form for "email" with "invalid@test.com"
-  And I fill form for "password" with "abcdefgh"
-  And I press "Login"
-  Then I should see an error message
+  When I go to the user log in page
+  And I fill form for "user_email" with "invalid@test.com"
+  And I fill form for "user_password" with "abcdefgh"
+  And I press "Log in"
+  Then I should see "Invalid email or password."
 
