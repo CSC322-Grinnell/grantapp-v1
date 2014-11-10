@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 
   validates_presence_of :role
   after_initialize :set_default_role
-
+  has_many :programs
 
 
 

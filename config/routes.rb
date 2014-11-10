@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'programs/new'
+
+  get 'programs/create'
+
+  get 'programs/update'
+
+  get 'programs/edit'
+
+  get 'programs/destroy'
+
+  get 'programs/index'
+
+  get 'programs/show'
+
   get 'dashboard/index'
 
   devise_for :users 
