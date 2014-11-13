@@ -62,5 +62,7 @@ group :development, :test do
   gem 'simplecov'
 end
 
+gem 'haml'
+gem 'haml-rails'
 gem 'bootstrap-sass', '~> 2.3'
 ruby '1.9.3'
