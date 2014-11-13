@@ -1,4 +1,3 @@
-@wip
 Feature: User Dashboard
 
   As a funding source
@@ -39,12 +38,13 @@ Scenario: funding source dashboard
 
 Scenario: reviewer dashboard
   When I go to the user log in page
-  And I fill form for "user_email" with "revew@admin.com"
+  And I fill form for "user_email" with "review@admin.com"
   And I fill form for "user_password" with "1234abcd"
   And I press "Log in"
   Then I should be on dashboard
   Then I should see a button with "Review Applications"
 
+@wip
 Scenario: applicant dashboard
   When I go to the user log in page
   And I fill form for "user_email" with "app@admin.com"
