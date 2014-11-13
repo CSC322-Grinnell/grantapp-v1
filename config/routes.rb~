@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-
+<<<<<<< HEAD
   resources :programs
+=======
+  get 'dashboard/index' => 'dashboard#index'
+
+>>>>>>> 2f7a93941307392d5bf0dfb55e71fa0a43ac27bd
   devise_for :users 
 
   get '/dashboard', :to => 'dashboard#index' 
