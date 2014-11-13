@@ -32,7 +32,7 @@ module NavigationHelpers
       admin_root_path
 
     when /^dashboard$/
-      dashboard_index_path
+      dashboard_path
 
     else
       begin

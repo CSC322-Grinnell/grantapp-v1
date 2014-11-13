@@ -1,0 +1,13 @@
+-if @program.errors.any?
+  #error_explanation
+  %h2
+    =pluralize(@program.errors.count, "error")
+    prohibited this task from being saved:
+    %ul
+      -@article.errors.full_messages.each do |msg|
+        %li=msg
+
+= label :program, :name, 'Name'
+= text_field :program, 'name'
+  
+= submit_tag 'Submit'
