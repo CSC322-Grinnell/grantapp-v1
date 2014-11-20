@@ -1,0 +1,18 @@
+Feature: Admin Dashboard
+
+  As an admin
+  When I log in
+  So I can manage users
+
+Background: admin exists
+  Given the following funding sources exist:
+  | email           | password |   Role  |
+  | admin@admin.com | 1234abcd |  Admin  |
+
+Scenario: admin dashboard
+  When I go to the admin log in page
+  And I fill form for "admin_email" with "admin@admim.com"
+  And I fill form for "admin_password" with "1234abcd"
+  And I press "Log in"
+  Then I should be on admin dashboard
+  Then I should see a button with "Users"
