@@ -17,7 +17,7 @@
 # * http://dannorth.net/2011/01/31/whose-domain-is-it-anyway/
 # * http://elabs.se/blog/15-you-re-cuking-it-wrong
 #
-
+# :nocov:
 
 require 'uri'
 require 'cgi'
@@ -252,3 +252,5 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+# :nocov:

@@ -59,10 +59,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'rspec'
   gem 'webrat'
-  gem 'simplecov'
+  gem 'simplecov', :require => false, :group => :test
 end
 
 gem 'haml'
 gem 'haml-rails'
 gem 'bootstrap-sass', '~> 2.3'
 ruby '1.9.3'
+
+gem 'carrierwave'
+
