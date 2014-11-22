@@ -17,4 +17,8 @@ When(/^I fill form for "(.*?)" with "(.*?)"$/) do |arg1, arg2|
 end
 
 
-
+And(/^I log in as an admin with email "(.*?)" and password "(.*?)"$/) do |email, password|
+  fill_in "admin_user_email", :with => email
+  fill_in "admin_user_password", :with => password
+  click_button("Login")
+end

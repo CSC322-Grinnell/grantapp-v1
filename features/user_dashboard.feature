@@ -17,9 +17,7 @@ Background: Users in database
 
 Scenario: admin dashboard
   When I go to the user log in page
-  And I fill form for "user_email" with "admin@admin.com"
-  And I fill form for "user_password" with "1234abcd"
-  And I press "Log in"
+  And I log in as a user with email "admin@admin.com" and password "1234abcd"
   Then I should be on dashboard
   Then I should see a button with "Review Applications"
   Then I should see a button with "Create Program"
@@ -28,9 +26,7 @@ Scenario: admin dashboard
 
 Scenario: funding source dashboard
   When I go to the user log in page
-  And I fill form for "user_email" with "fs@admin.com"
-  And I fill form for "user_password" with "1234abcd"
-  And I press "Log in"
+  And I log in as a user with email "fs@admin.com" and password "1234abcd"
   Then I should be on dashboard
   Then I should see a button with "Review Applications"
   Then I should see a button with "Approve/Disapprove Applications"
@@ -38,25 +34,19 @@ Scenario: funding source dashboard
 
 Scenario: reviewer dashboard
   When I go to the user log in page
-  And I fill form for "user_email" with "review@admin.com"
-  And I fill form for "user_password" with "1234abcd"
-  And I press "Log in"
+  And I log in as a user with email "review@admin.com" and password "1234abcd"
   Then I should be on dashboard
   Then I should see a button with "Review Applications"
 
 @wip
 Scenario: applicant dashboard
   When I go to the user log in page
-  And I fill form for "user_email" with "app@admin.com"
-  And I fill form for "user_password" with "1234abcd"
-  And I press "Log in"
+  And I log in as a user with email "app@admin.com" and password "1234abcd"
   Then I should be on dashboard
   Then I should see a button with "New Application"
   Then I should see a button with "My Applications"
 
 Scenario: Log in with invalid credentials
   When I go to the user log in page
-  And I fill form for "user_email" with "yooo@admin.com"
-  And I fill form for "user_password" with "98765432"
-  And I press "Log in"
+  And I log in as a user with email "yoo@admin.com" and password "1234abcd"
   Then I should see "Invalid email or password."

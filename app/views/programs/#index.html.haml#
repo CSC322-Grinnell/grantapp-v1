@@ -2,7 +2,9 @@
 
 - @programs.each do |program|
   =link_to "#{program.name}", program_path(program.id)
+
   =program.start_date
+
   =program.end_date
   =program.pending
 
