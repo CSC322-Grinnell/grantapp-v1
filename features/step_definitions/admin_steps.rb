@@ -24,4 +24,8 @@ Then(/^I should see a field for "(.*?)"$/) do |field|
   page.should have_field(field) 
 end
 
-
+And(/^I log in as an admin with email "(.*?)" and password "(.*?)"$/) do |email, password|
+  fill_in "admin_user_email", :with => email
+  fill_in "admin_user_password", :with => password
+  click_button("Login")
+end

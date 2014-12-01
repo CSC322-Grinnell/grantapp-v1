@@ -18,16 +18,16 @@ Scenario: see the log in form
 
 Scenario: log in with valid credentials
   When I go to the user log in page
-  And I log in as a user with email "test0@test.com" and password "1234abcd"
+  And I log in as a use with email "test0@test.com" and password "1234abcd"
   Then I should be on dashboard
 
 Scenario: log in with invalid password
   When I go to the user log in page
-  And I log in as a user with email "test0@test.com" and password "abcdefgh"
+  And I log in as a use with email "test0@test.com" and password "abcdefgh"
   Then I should see "Invalid email or password."
 
 Scenario: log in with invalid email
   When I go to the user log in page
-  And I log in as a user with email "invalid@test.com" and password "1234abcd"
+  And I log in as a use with email "invalid@test.com" and password "1234abcd"
   Then I should see "Invalid email or password."
 
