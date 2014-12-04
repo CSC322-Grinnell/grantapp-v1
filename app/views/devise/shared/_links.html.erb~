@@ -11,7 +11,7 @@
 <%# end -%>
 
 <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Admin Login", admin_root_path %><br />
+  <%= link_to "Admin Login", admin_root %><br />
 <% end -%>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
