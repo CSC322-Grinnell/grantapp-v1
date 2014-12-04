@@ -1,2 +1,6 @@
-=form_for @program do |f|
-  =render partial: 'program_form', f: f
+%div{:style => 'margin: 30px'}
+
+  =form_for @program do |f|
+    =render partial: 'program_form', f: f
+
+  = link_to 'Back to Dashboard', dashboard_path

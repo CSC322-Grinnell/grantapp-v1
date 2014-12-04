@@ -1,16 +1,12 @@
-%h1{:style => 'display:inline; margin:15px'}= "Welcome, #{@user.username}"
+
+%div{:style => 'margin: 30px'}
+  %h1{:style => 'display:inline; margin:15px'}= "Welcome, #{@user.username}"
 
 
-= link_to(destroy_user_session_path, :method => :delete) do
-  %img{:style => 'float:right; width:20px; height:20px; margin:15px 15px 0px 0px', :src => '/images/logout.png'}
-  %div{:style => 'float:right; margin:15px 5px'} Logout
+  = link_to(destroy_user_session_path, :method => :delete) do
+    %img{:style => 'float:right; width:20px; height:20px; margin:15px 15px 0px 0px', :src => '/images/logout.png'}
+    %div{:style => 'float:right; margin:15px 5px 0px 0px'} Logout
 
-%div{:class => 'container-fluid'}
-  %div{:class => 'row'}
-    %button{:class => 'btn btn-large col-md-4', :type => "button"} Create User
-    %button{:class => 'btn btn-large col-md-4', :type => "button"} Review Applications
-    %button{:class => 'btn btn-large col-md-4', :type => "button"} Create Program
-  %div{:class => 'row'}
-    %button{:class => 'btn btn-large col-md-4', :type => "button"} Change User Settings
-    %button{:class => 'btn btn-large col-md-4', :type => "button"} Approve/Disapprove Applications
-    %button{:class => 'btn btn-large col-md-4', :type => "button"} Edit Programs
+  %div{:class => 'container-fluid', :style => 'margin:30px'}
+    = render :partial => "Buttons/buttons.html.haml"
+

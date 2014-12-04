@@ -1,3 +1,7 @@
-%p= @program.name
+%div{:style => 'margin: 30px'}
+  %p= @program.name
 
-= link_to 'Edit Program', edit_program_path(@program.id)
+  = link_to 'Edit Program', edit_program_path(@program.id)
+  %br
+  %br
+  = link_to 'Back to Dashboard', dashboard_path
