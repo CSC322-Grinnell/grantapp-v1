@@ -7,6 +7,9 @@ class ProgramsController < ApplicationController
 
   def create
     @program = Program.new(program_params)
+    @program.form = params[:program][:form]
+
+    debugger
     
     if @program.save
       redirect_to @program, :notice => 'Successfully created a new program!'
@@ -17,6 +20,8 @@ class ProgramsController < ApplicationController
 
   def update
     @program = Program.find(params[:id])
+
+#    debugger
 
     if @program.update_attributes(program_params)
       redirect_to @program, :notice => 'Successfully updated a new program!'
@@ -40,10 +45,12 @@ class ProgramsController < ApplicationController
 
   def show
     @program = Program.find(params[:id])
+
+#    debugger
   end
 
   private 
   def program_params
-    params.require(:program).permit(:name, :start_date, :end_date, :pending)
+    params.require(:program).permit(:name, :start_date, :end_date, :pending, :form)
   end
 end

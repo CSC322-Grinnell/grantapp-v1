@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role
   has_many :programs
 
-
-
   def set_default_role
     self.role ||= "Applicant"
   end

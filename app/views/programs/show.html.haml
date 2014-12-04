@@ -1,3 +1,4 @@
 %p= @program.name
+= link_to 'Download Form', @program.form.current_path
 
 = link_to 'Edit Program', edit_program_path(@program.id)
