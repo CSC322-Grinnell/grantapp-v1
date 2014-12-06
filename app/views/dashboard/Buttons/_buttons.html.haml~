@@ -1,30 +1,32 @@
 - if @user.role == 'Applicant'
   %div{:class => 'row'}
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} Search for Applications
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} Search for Applications
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} Submit Application
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} Submit Application
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} See Application Feedback
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} See Application Feedback
 
 - if @user.role == 'Reviewer'
   %div{:class => 'row'}
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} Review Applications
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} Review Applications
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} See Application Feedback
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} See Application Feedback
 
 - if @user.role == 'Funding Source'
   %div{:class => 'row'}
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} Review Applications
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} Review Applications
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} See Application Feedback
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} See Application Feedback
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} Approve Applications
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} Approve Applications
   %div{:class => 'row'}
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :type => "button"} Upload New Application Form
+      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} Upload New Application Form
+    %div{:class => 'col-md-4'}
+      %button{:class => 'btn btn-large col-md-12', :type => "button"} See My Programs
 
 - if @user.role == 'Admin'
   %div{:class => 'row'}
