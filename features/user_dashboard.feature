@@ -19,24 +19,23 @@ Scenario: admin dashboard
   When I go to the user log in page
   And I log in as a user with email "admin@admin.com" and password "1234abcd"
   Then I should be on dashboard
-  Then I should see a button with "Review Applications"
-  Then I should see a button with "Create Program"
-  Then I should see a button with "Approve/Disapprove Applications"
-  Then I should see a button with "Edit Programs"
+  Then I should see a disabled button with "Review Applications"
+  Then I should see a button with "Create New Programs"
+  Then I should see a disabled button with "Approve Applications"
+  Then I should see a button with "View Programs"
 
 Scenario: funding source dashboard
   When I go to the user log in page
   And I log in as a user with email "fs@admin.com" and password "1234abcd"
   Then I should be on dashboard
-  Then I should see a button with "Review Applications"
-  Then I should see a button with "Approve/Disapprove Applications"
-  Then I should see a button with "Edit Programs"
+  Then I should see a disabled button with "Review Applications"
+  Then I should see a disabled button with "Approve Applications"
 
 Scenario: reviewer dashboard
   When I go to the user log in page
   And I log in as a user with email "review@admin.com" and password "1234abcd"
   Then I should be on dashboard
-  Then I should see a button with "Review Applications"
+  Then I should see a disabled button with "Review Applications"
 
 @wip
 Scenario: applicant dashboard
