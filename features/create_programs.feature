@@ -7,9 +7,10 @@ Feature: Create programs
 Background: admin in database
 
   Given the following users exist:
-  | email           | password | role      |
-  | admin@admin.com | 1234abcd | Admin     |
-  | app@app.com     | 1234abcd | Applicant |
+  | email           | password | role           |
+  | admin@admin.com | 1234abcd | Admin          |
+  | fs@fs.com       | 1234abcd | Funding Source |
+  | app@app.com     | 1234abcd | Applicant      |
 
   Given the following programs exist:
   | name   |
@@ -54,6 +55,12 @@ Scenario: delete program
   And I click "Edit Program"
   And I click "Delete Program"
   Then a program with name "Program X" should not exist
+
+Scenario: funding source cannot create programs
+  When I go to the user log in page
+  And I log in as a user with email "fs@fs.com" and password "1234abcd"
+  And I go to create program page
+  Then I should be on programs page
 
 Scenario: applicants cannot create programs
   When I go to the user log in page
