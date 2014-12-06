@@ -1,7 +1,23 @@
 %div{:style => 'margin: 30px'}
+<<<<<<< HEAD
   %h1= @program.name
+=======
+  %p= "Program: #{@program.name}"
+  %p= "Program Info: #{@program.info}"
+  %p= "Start Date: #{@program.start_date}"
+  %p= "End Date: #{@program.end_date}"
+  %p
+    Status: 
+    - if @program.pending
+      Pending
+    - else    
+      Active
 
-  = link_to 'Edit Program', edit_program_path(@program.id)
+  - if current_user.role != 'Applicant'
+    = link_to 'Edit Program', edit_program_path(@program.id)
+>>>>>>> 4a2a2e511be769e01598680c65ed95c78f3d41df
+
   %br
-  %br
+
+  = link_to 'Back to Program', programs_path
   = link_to 'Back to Dashboard', dashboard_path

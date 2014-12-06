@@ -2,12 +2,27 @@
   %h1 Programs
 
   - @programs.each do |program|
-    %tbody
-      %tr
-        %td= link_to "#{program.name}", program_path(program.id)
-        %td= program.start_date
-        %td= program.end_date
-        %td= program.pending
+<<<<<<< HEAD
+    
+    =link_to "#{program.name}", program_path(program.id)
+    =program.start_date
+    =program.end_date
+    =program.pending
+    %br
+=======
+    %p 
+      Program:
+      =link_to "#{program.name}", program_path(program.id)
+    %p= "Program Info: #{program.info}"
+    %p= "Start Date: #{program.start_date}"
+    %p= "End Date: #{program.end_date}"
+    %p
+      Status:
+      - if program.pending
+        Pending
+      - else
+        Active
+>>>>>>> 4a2a2e511be769e01598680c65ed95c78f3d41df
 
   %br
 
