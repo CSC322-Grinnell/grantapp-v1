@@ -27,8 +27,6 @@ Scenario: log in with invalid email
   And I log in as an admin with email "invalid@test.com" and password "abcdefg"
   Then I should see "Invalid email or password."
 
-
-
 Scenario: log in with valid email and password
   When I go to the admin log in page
   And I log in as an admin with email "admin@admin.com" and password "1234abcd"

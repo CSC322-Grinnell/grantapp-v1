@@ -12,6 +12,10 @@ Then(/^I should see a button with "(.*?)"$/) do |arg1|
   page.should have_button(arg1)
 end
 
+Then(/^I should see a disabled button with "(.*?)"$/) do |arg1|
+  find(:button, arg1, disabled: true)
+end
+
 When(/^I fill form for "(.*?)" with "(.*?)"$/) do |arg1, arg2|
   fill_in arg1, :with => arg2
 end

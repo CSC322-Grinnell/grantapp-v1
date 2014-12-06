@@ -19,9 +19,12 @@
 = label :program, :end_date, 'End Date'
 = date_select :program, :end_date
 
+
+= label :program, :form_url, 'Form URL'
+= text_field :program, :form_url
+
 = label :program, :pending, 'Status'
-= select(:program, :pending, options_for_select([["Active",
-false],["Pending", true]], @program.pending))
+= select(:program, :pending, options_for_select([["Active", false],["Pending", true]], @program.pending))
   
 %br
 = submit_tag 'Submit'

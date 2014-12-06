@@ -17,11 +17,15 @@
     - else    
       Active
 
-  - if current_user.role != 'Applicant'
-    = link_to 'Edit Program', edit_program_path(@program.id)
+- if @program.form_url.empty?
+  %p Form Not Available
+-else
+  = link_to 'View Form', @program.form_url
 
-  %br
+- if current_user.role != 'Applicant'
+  = link_to 'Edit Program', edit_program_path(@program.id)
 
   = link_to 'Back to Program', programs_path
   %br
   = link_to 'Back to Dashboard', dashboard_path
+
