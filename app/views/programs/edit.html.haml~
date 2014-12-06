@@ -1,4 +1,0 @@
-=form_for @program do |f|
-  =render partial: 'program_form', f: f
-
-= link_to 'Delete Program', program_path(@program.id), :method => :delete
