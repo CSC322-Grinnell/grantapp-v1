@@ -17,7 +17,7 @@ Background: admin in database
   | name   |
   | Sample |
 
-Scenario: create programs
+Scenario: admin can create programs
   When I go to the user log in page
   And I log in as a user with email "admin@admin.com" and password "1234abcd"
   And I go to create program page
@@ -33,7 +33,7 @@ Scenario: add form url
   And I click "Program Y"
   Then I should see a link with "View Form" to "http://www.google.com"
 
-Scenario: edit program
+Scenario: admin can edit program
   When I go to the user log in page
   And I log in as a user with email "admin@admin.com" and password "1234abcd"
   And I go to create program page
@@ -74,6 +74,27 @@ Scenario: applicant cannot create programs
   And I log in as a user with email "app@app.com" and password "1234abcd"
   And I go to create program page
   Then I should be on programs page
+
+
+
+Scenario: funding source can edit programs
+  When I go to the user log in page
+  And I log in as a user with email "fs@fs.com" and password "1234abcd"
+  And I go to programs page
+  And I click "Sample"
+  Then I should see a link "Edit Program"
+
+Scenario: reviewer can edit programs
+  When I go to the user log in page
+  And I log in as a user with email "review@fs.com" and password "1234abcd"
+  And I go to programs page
+  And I click "Sample"
+  Then I should see a link "Edit Program"
+
+
+
+
+
 
 Scenario: applicants cannot edit programs
   When I go to the user log in page
