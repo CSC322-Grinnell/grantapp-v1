@@ -1,4 +1,11 @@
-=form_for @program do |f|
-  =render partial: 'program_form', f: f
+%div{:style => 'margin: 30px'}
 
-= link_to 'Delete Program', program_path(@program.id), :method => :delete
+  =form_for @program do |f|
+    =render partial: 'program_form', f: f
+
+  = link_to 'Delete Program', program_path(@program.id), :method => :delete
+
+  %br
+  %br
+  = link_to 'Back to Program', programs_path
+  = link_to 'Back to Dashboard', dashboard_path

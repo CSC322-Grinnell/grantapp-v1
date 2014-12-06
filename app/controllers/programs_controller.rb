@@ -8,11 +8,15 @@ class ProgramsController < ApplicationController
 
   def create
     @program = Program.new(program_params)
-    
-    if @program.save
-      redirect_to @program, :notice => 'Successfully created a new program!'
-    else
-      flash[:notice] = 'Failed to create a new program.'
+    if @program.name == ""
+      redirect_to new_program_path
+      flash[:notice] = 'New program must have a name'
+    else    
+      if @program.save
+        redirect_to @program, :notice => 'Successfully created a new program!'
+      else
+        flash[:notice] = 'Failed to create a new program.'
+      end
     end
   end
 
