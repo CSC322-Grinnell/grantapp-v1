@@ -75,8 +75,6 @@ Scenario: applicant cannot create programs
   And I go to create program page
   Then I should be on programs page
 
-
-
 Scenario: funding source can edit programs
   When I go to the user log in page
   And I log in as a user with email "fs@fs.com" and password "1234abcd"
@@ -91,10 +89,21 @@ Scenario: reviewer can edit programs
   And I click "Sample"
   Then I should see a link "Edit Program"
 
+Scenario: funding source cannot delete programs
+  When I go to the user log in page
+  And I log in as a user with email "fs@fs.com" and password "1234abcd"
+  And I go to programs page
+  And I click "Sample"
+  And I click "Edit Program"
+  Then I should not see a link with "Delete Program"
 
-
-
-
+Scenario: reviewer cannot delete programs
+  When I go to the user log in page
+  And I log in as a user with email "review@fs.com" and password "1234abcd"
+  And I go to programs page
+  And I click "Sample"
+  And I click "Edit Program"
+  Then I should not see a link with "Delete Program"
 
 Scenario: applicants cannot edit programs
   When I go to the user log in page
