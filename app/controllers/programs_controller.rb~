@@ -8,16 +8,16 @@ class ProgramsController < ApplicationController
 
   def create
     @program = Program.new(program_params)
-    if @program.name == ""
-      redirect_to new_program_path
-      flash[:notice] = 'New program must have a name'
-    else    
+    #if @program.name == ""
+    #  flash[:notice] = 'New program must have a name'
+    #else    
       if @program.save
         redirect_to @program, :notice => 'Successfully created a new program!'
       else
+        redirect_to new_program_path
         flash[:notice] = 'Failed to create a new program.'
       end
-    end
+    #end
   end
 
   def update
@@ -49,7 +49,7 @@ class ProgramsController < ApplicationController
 
   private 
   def program_params
-    params.require(:program).permit(:name, :start_date, :end_date, :pending, :form_url, :info)
+    params.require(:program).permit(:name, :start_date, :end_date, :pending, :info)
   end
   
   def not_applicant?

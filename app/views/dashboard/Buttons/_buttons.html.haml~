@@ -14,7 +14,7 @@
     %div{:class => 'col-md-4'}
       %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} See Application Feedback
     %div{:class => 'col-md-4'}
-      %button{:class => 'btn btn-large col-md-12', :disabled => "disabled", :type => "button"} See My Programs
+      %button{:class => 'btn btn-large col-md-12', :type => "button"} See My Programs
 
 - if @user.role == 'Funding Source'
   %div{:class => 'row'}
