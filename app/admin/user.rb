@@ -45,4 +45,26 @@ ActiveAdmin.register User do
   end
 
 =end
+  controller do
+    def update
+      
+      @user = User.find(params[:id])
+      if params[:user][:password].blank?
+        @user.update_without_password(user_params)
+      else
+        @user.update_attributes(user_params)
+      end
+      if @user.errors.blank?
+        redirect_to admin_users_path, :notice => "User updated successfully."
+      else
+        render :edit
+      end
+    end
+
+    private
+    def user_params
+      params[:user].permit(:username, :organization, :role)
+    end
+  end
+
 end
