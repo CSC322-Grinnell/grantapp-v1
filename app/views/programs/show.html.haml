@@ -10,7 +10,11 @@
     - else    
       Active
 
-= link_to 'View Form', @program.form_url
+- if @program.form_url.empty?
+  %p Form Not Available
+-else
+  = link_to 'View Form', @program.form_url
+
 - if current_user.role != 'Applicant'
   = link_to 'Edit Program', edit_program_path(@program.id)
 
