@@ -1,7 +1,7 @@
 class ProgramsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :not_applicant?, :except => [:index, :show]
-  before_filter :is_admin?, :only => [:new, :create]
+  before_filter :is_admin?, :only => [:new, :create, :destroy]
   def new
     @program = Program.new
   end
