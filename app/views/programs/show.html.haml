@@ -10,7 +10,7 @@
     - else    
       Active
 
-- if @program.form_url.empty?
+- if @program.form_url == nil || @program.form_url.empty?
   %p Form Not Available
 -else
   = link_to 'View Form', @program.form_url

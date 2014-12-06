@@ -13,16 +13,12 @@ Background: funding source in database
 
 Scenario: funding source dashboard
   When I go to the user log in page
-  And I fill form for "user_email" with "fs@admin.com"
-  And I fill form for "user_password" with "1234abcd"
-  And I press "Log in"
+  And I log in as a user with email "fs@admin.com" and password "1234abcd"
   Then I should be on dashboard
   Then I should see a disabled button with "Review Applications"
   Then I should see a disabled button with "Approve Applications"
 
 Scenario: funding source log in with invalid credentials
   When I go to the user log in page
-  And I fill form for "user_email" with "fs0@admim.com"
-  And I fill form for "user_password" with "98765432"
-  And I press "Log in"
+  And I log in as a user with email "fs0@admin.com" and password "987654321"
   Then I should see "Invalid email or password."
