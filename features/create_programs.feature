@@ -10,6 +10,7 @@ Background: admin in database
   | email           | password | role           |
   | admin@admin.com | 1234abcd | Admin          |
   | fs@fs.com       | 1234abcd | Funding Source |
+  | review@fs.com   | 1234abcd | Reviewer       |
   | app@app.com     | 1234abcd | Applicant      |
 
   Given the following programs exist:
@@ -62,7 +63,13 @@ Scenario: funding source cannot create programs
   And I go to create program page
   Then I should be on programs page
 
-Scenario: applicants cannot create programs
+Scenario: reviewer cannot create programs
+  When I go to the user log in page
+  And I log in as a user with email "review@fs.com" and password "1234abcd"
+  And I go to create program page
+  Then I should be on programs page
+
+Scenario: applicant cannot create programs
   When I go to the user log in page
   And I log in as a user with email "app@app.com" and password "1234abcd"
   And I go to create program page
