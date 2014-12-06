@@ -6,7 +6,3 @@
   - if current_user.role == 'Admin'
     = link_to 'Delete Program', program_path(@program.id), :method => :delete
 
-  %br
-  = link_to 'Back to Program', programs_path
-  %br
-  = link_to 'Back to Dashboard', dashboard_path
