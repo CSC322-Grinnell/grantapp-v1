@@ -1,7 +1,7 @@
 class ProgramsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   before_filter :not_applicant?, :except => [:index, :show]
-
+  before_filter :is_admin?, :only => [:new, :create]
   def new
     @program = Program.new
   end
@@ -59,5 +59,14 @@ class ProgramsController < ApplicationController
       redirect_to programs_path
     end
   end
+
+    def is_admin?
+    if current_user.role == 'Admin'
+      true
+    else
+      redirect_to programs_path
+    end
+  end
+
 
 end
