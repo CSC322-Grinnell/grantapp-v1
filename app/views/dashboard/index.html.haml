@@ -8,17 +8,5 @@
     %div{:style => 'float:right; margin:15px 5px 0px 0px'} Logout
 
   %div{:class => 'container-fluid', :style => 'margin:30px'}
-    %div{:class => 'row'}
-      %div{:class => 'col-md-4'}
-        %button{:class => 'btn btn-large col-md-12', :type => "button"} Create User
-      %div{:class => 'col-md-4'}
-        %button{:class => 'btn btn-large col-md-12', :type => "button"} Review Applications
-      %div{:class => 'col-md-4'}
-        %button{:class => 'btn btn-large col-md-12', :type => "button"} Create Program
-    %div{:class => 'row'}
-      %div{:class => 'col-md-4'}
-        %button{:class => 'btn btn-large col-md-12', :type => "button"} Change User Settings
-      %div{:class => 'col-md-4'}
-        %button{:class => 'btn btn-large col-md-12', :type => "button"} Approve/Disapprove Applications
-      %div{:class => 'col-md-4'}
-        %button{:class => 'btn btn-large col-md-12', :type => "button"} Edit Programs
+    = render :partial => "dashboard/Buttons/buttons.html.haml"
+
