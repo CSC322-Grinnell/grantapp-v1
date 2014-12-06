@@ -44,6 +44,17 @@ Scenario: edit program
   Then I click "Submit"
   Then a program with name "Program Super X" should exist
 
+Scenario: delete program
+  When I go to the user log in page
+  And I log in as a user with email "admin@admin.com" and password "1234abcd"
+  And I go to create program page
+  And I create a program with name "Program X" and form url "http://www.google.com"
+  And I go to programs page
+  And I click "Program X"
+  And I click "Edit Program"
+  And I click "Delete Program"
+  Then a program with name "Program X" should not exist
+
 Scenario: applicants cannot create programs
   When I go to the user log in page
   And I log in as a user with email "app@app.com" and password "1234abcd"
