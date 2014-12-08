@@ -1,6 +1,7 @@
 class ProgramsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  before_filter :not_applicant?, :except => [:index, :show]
+  before_filter :can_edit?, :except => [:index, :show]
+  before_filter :is_admin?, :only => [:new, :create, :destroy]
 
   def new
     @program = Program.new
@@ -52,12 +53,21 @@ class ProgramsController < ApplicationController
     params.require(:program).permit(:name, :start_date, :end_date, :pending, :form_url, :info)
   end
   
-  def not_applicant?
-    if current_user.role != 'Applicant'
+  def can_edit?
+    if current_user.role != 'Applicant' && current_user.role != 'Reviewer'
       true
     else
       redirect_to programs_path
     end
   end
+
+    def is_admin?
+    if current_user.role == 'Admin'
+      true
+    else
+      redirect_to programs_path
+    end
+  end
+
 
 end

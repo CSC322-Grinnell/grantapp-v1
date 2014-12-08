@@ -36,6 +36,13 @@ module NavigationHelpers
     when /^dashboard$/
       dashboard_path
 
+    when /^create program page$/
+      new_program_path
+ 
+    when /^programs page$/
+      programs_path
+
+
     else
       begin
         page_name =~ /^the (.*) page$/
