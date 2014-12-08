@@ -11,17 +11,25 @@
     %strong End Date: 
     =@program.end_date
   %p
-    Status: 
+    %strong Status: 
     - if @program.pending
       Pending
     - else    
       Active
 
+  - if @program.form_url.empty?
+    %p Form Not Available
+  -else
+    = link_to 'View Form', "http://http://" + @program.form_url
+
+    %br
+
   - if current_user.role != 'Applicant'
     = link_to 'Edit Program', edit_program_path(@program.id)
 
-  %br
+    %br
 
-  = link_to 'Back to Program', programs_path
-  %br
-  = link_to 'Back to Dashboard', dashboard_path
+    = link_to 'Back to Program', programs_path
+    %br
+    = link_to 'Back to Dashboard', dashboard_path
+

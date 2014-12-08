@@ -17,15 +17,19 @@
     - else    
       Active
 
-- if @program.form_url.empty?
-  %p Form Not Available
--else
-  = link_to 'View Form', @program.form_url
+  - if @program.form_url.empty?
+    %p Form Not Available
+  -else
+    = link_to 'View Form', "http://" + @program.form_url
 
-- if current_user.role != 'Applicant'
-  = link_to 'Edit Program', edit_program_path(@program.id)
+    %br
 
-  = link_to 'Back to Program', programs_path
-  %br
-  = link_to 'Back to Dashboard', dashboard_path
+  - if current_user.role != 'Applicant'
+    = link_to 'Edit Program', edit_program_path(@program.id)
+
+    %br
+
+    = link_to 'Back to Program', programs_path
+    %br
+    = link_to 'Back to Dashboard', dashboard_path
 

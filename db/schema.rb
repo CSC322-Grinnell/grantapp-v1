@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 20141206191215) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.boolean  "pending"
-    t.string   "form_url"
     t.text     "info"
+    t.string   "form_url"
   end
 
   create_table "users", force: true do |t|
