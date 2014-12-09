@@ -11,6 +11,8 @@ module Grantapp
     config.serve_static_assets = true
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
 
+    config.assets.initialize_on_precompile = false
+
     config.generators do |g|
       g.template_engine :haml
     end
