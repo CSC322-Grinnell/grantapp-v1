@@ -61,7 +61,7 @@ class ProgramsController < ApplicationController
     end
   end
 
-    def is_admin?
+  def is_admin?
     if current_user.role == 'Admin'
       true
     else

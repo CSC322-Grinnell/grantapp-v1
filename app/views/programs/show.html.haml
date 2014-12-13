@@ -17,19 +17,22 @@
     - else    
       Active
 
-  - if @program.form_url.empty?
+  - if @program.form_url == nil || @program.form_url.empty?
     %p Form Not Available
   -else
-    = link_to 'View Form', "http://" + @program.form_url
+    - if @program.form_url.start_with?('http://','https://')
+      = link_to 'View Form', @program.form_url
+    - else
+      = link_to 'View Form', "http://" + @program.form_url
 
     %br
 
-  - if current_user.role != 'Applicant'
+  - if current_user != nil && current_user.role != 'Applicant' && current_user.role != 'Reviewer'
     = link_to 'Edit Program', edit_program_path(@program.id)
 
-    %br
+  %br
 
-    = link_to 'Back to Program', programs_path
-    %br
-    = link_to 'Back to Dashboard', dashboard_path
+  = link_to 'Back to Programs', programs_path
+  %br
+  = link_to 'Back to Dashboard', dashboard_path
 
