@@ -27,12 +27,12 @@
 
     %br
 
-  - if current_user.role != 'Applicant' && current_user.role != 'Reviewer'
+  - if current_user != nil && current_user.role != 'Applicant' && current_user.role != 'Reviewer'
     = link_to 'Edit Program', edit_program_path(@program.id)
 
   %br
 
-  = link_to 'Back to Program', programs_path
+  = link_to 'Back to Programs', programs_path
   %br
   = link_to 'Back to Dashboard', dashboard_path
 
