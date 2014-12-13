@@ -5,7 +5,9 @@ Given /the following programs exist/ do |programs|
 end
 
 When(/^I create a program with name "(.*?)" and form url "(.*?)"$/) do |name, url|
-  Program.create!(:name => name, :form_url => url)
+  fill_in :program_name, :with => name
+  fill_in :program_form_url, :with => url
+  click_on('Submit')
 end
 
 Then(/^a program with name "(.*?)" should exist$/) do |name|
